@@ -58,13 +58,14 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (200 == requestCode) {
-            if (resultCode == RESULT_OK) {
-                txtSecret.setText("Login with "+data.getStringExtra("Secret"));
-                prefs.edit().putString("Secret", data.getStringExtra("Secret")).apply();
-                btnGET.setVisibility(View.GONE);
-                btnOut.setVisibility(View.VISIBLE);
-            }
-        }
+
+        if (200 != requestCode || resultCode != RESULT_OK)
+            return;
+
+        txtSecret.setText("Login with " + data.getStringExtra("Secret"));
+        prefs.edit().putString("Secret", data.getStringExtra("Secret")).apply();
+        btnGET.setVisibility(View.GONE);
+        btnOut.setVisibility(View.VISIBLE);
+
     }
 }
