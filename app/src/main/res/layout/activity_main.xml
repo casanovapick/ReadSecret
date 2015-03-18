@@ -17,9 +17,17 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GET SECRET"
+        android:text="Login"
         android:id="@+id/btn_get"
         android:layout_marginTop="22dp"
         android:layout_below="@+id/txt_secret"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LogOut"
+        android:id="@+id/btn_logout"
+        android:layout_below="@+id/btn_get"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
